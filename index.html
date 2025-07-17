@@ -176,7 +176,7 @@
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark">
-                        <!-- Placeholder for profile image -->
+                        
                         <div class="w-full h-full bg-gradient-to-br from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark flex items-center justify-center">
                             <span class="text-6xl text-white font-bold">FM</span>
                         </div>
@@ -227,17 +227,10 @@
                             <!-- Video Placeholder - Replace with your actual video embed code -->
                             <div class="video-placeholder">
                                 <i class="fas fa-video text-4xl mb-3"></i>
-                                <p class="text-lg font-medium">Add Your Video Pitch Here</p>
-                                <p class="text-sm mt-2">(Replace this placeholder with your video)</p>
+                                <p class="text-lg font-medium"></p>
+                                <p class="text-sm mt-2"></p>
                             </div>
-                            <!-- Example of embedded YouTube video (commented out) -->
-                            <!--
-                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                            </iframe>
-                            -->
+                            
                         </div>
                         <div class="mt-4 text-center">
                             <button class="px-4 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
@@ -565,11 +558,9 @@
     </footer>
 
     <script>
-        // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
         
-        // Check for saved user preference or use system preference
         if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
         } else {
@@ -581,7 +572,6 @@
             localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
         
-        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -589,14 +579,12 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -613,27 +601,17 @@
             });
         });
         
-        // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // Video play functionality (example - you would replace this with your actual video implementation)
         const videoPlaceholder = document.querySelector('.video-placeholder');
         const playButton = document.querySelector('.video-container button');
         
         if (videoPlaceholder && playButton) {
             playButton.addEventListener('click', () => {
-                // This is where you would implement your video play functionality
-                // For example, replacing the placeholder with an embedded video
+                
                 alert('Replace this with your actual video implementation. For YouTube, you would embed an iframe here.');
                 
-                // Example of what you might do for YouTube:
-                // videoPlaceholder.innerHTML = `
-                //     <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" 
-                //             frameborder="0" 
-                //             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                //             allowfullscreen>
-                //     </iframe>
-                // `;
+               
             });
         }
     </script>
